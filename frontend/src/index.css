@@ -7,19 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.site-container {
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 header {
-  background-color: #404040;
+  background-color: #111111;
   padding: 1rem;
 }
 
 header a {
   text-decoration: none;
-  color: white;
+  color: #dddddd;
   font-weight: bold;
-}
-
-main {
-  padding: 1rem;
 }
 
 .products {
@@ -39,4 +43,18 @@ main {
 
 .product-info {
   padding: 1rem;
+}
+
+footer {
+  background-color: #131313;
+  color: #ffffff;
+  display: flex;
+}
+
+.footer-title {
+  padding: 2vw;
+}
+
+.footer-title h4 {
+  font-weight: 300;
 }
