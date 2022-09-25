@@ -25,7 +25,9 @@ function App() {
         </main>
         <footer>
           <div class="footer-title">
-            <h4>HOME</h4>
+            <Link to="/">
+              <h4>HOME</h4>
+            </Link>
             <h4>NEW</h4>
             <h4>ABOUT/CONTACT</h4>
             <h4>ITEMS</h4>
