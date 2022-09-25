@@ -10,37 +10,27 @@ function App() {
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
         <header>
-          <nav>
-            {/* MENU BUTTON HERE */}
-            <Link to="/">TheDEFT</Link>
-            {/* ACCOUNT HERE */}
-            {/* CART HERE */}
-          </nav>
+          <Navbar bg="dark" variant="dark">
+            <Container>
+              {/* MENU BUTTON HERE */}
+              <LinkContainer to="/">
+                <Navbar.Brand>TheDEFT</Navbar.Brand>
+              </LinkContainer>
+              {/* ACCOUNT HERE */}
+              {/* CART HERE */}
+            </Container>
+          </Navbar>
         </header>
         <main>
-          <Routes>
-            <Route path="/product/:slug" element={<ProductScreen />} />
-            <Route path="/" element={<HomeScreen />} />
-          </Routes>
+          <Container className="mt-3">
+            <Routes>
+              <Route path="/product/:slug" element={<ProductScreen />} />
+              <Route path="/" element={<HomeScreen />} />
+            </Routes>
+          </Container>
         </main>
         <footer>
-          <div class="footer-title">
-            <Link to="/">
-              <h4>HOME</h4>
-            </Link>
-            <h4>NEW</h4>
-            <h4>ABOUT/CONTACT</h4>
-            <h4>ITEMS</h4>
-            <h4>socials here</h4>
-            <h1>TheDEFT</h1>
-          </div>
-          <div class="footer-title">
-            <h4>SIGN IN</h4>
-            <h4>CART</h4>
-          </div>
-          <div class="footer-title">
-            <h2>© 2022 TheDEFT</h2>
-          </div>
+          <div>© 2022 TheDEFT</div>
         </footer>
       </div>
     </BrowserRouter>

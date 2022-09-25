@@ -63,3 +63,7 @@ footer {
 .footer-title h4 {
   font-weight: 300;
 }
+
+.img-large {
+  max-width: 100%;
+}

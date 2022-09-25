@@ -17,7 +17,7 @@ const data = {
       category: 'hoods',
       image: '/images/p2.jpg',
       price: 45,
-      countInStock: 10,
+      countInStock: 0,
       rating: 4.5,
       numReviews: 10,
       description: 'very cool hoodie. much nice',
