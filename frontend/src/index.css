@@ -50,20 +50,10 @@ header a {
   padding: 1rem;
 }
 
-footer {
-  background-color: #131313;
-  color: #ffffff;
-  display: flex;
-}
-
-.footer-title {
-  padding: 2vw;
-}
-
-.footer-title h4 {
-  font-weight: 300;
-}
-
 .img-large {
   max-width: 100%;
+}
+
+.img-thumbnail {
+  height: 80px;
 }
