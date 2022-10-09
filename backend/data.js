@@ -1,6 +1,7 @@
 const data = {
   products: [
     {
+      _id: '1',
       name: 'PRO SERIES Jacket',
       slug: 'PRO-jacket',
       category: 'outerwear',
@@ -12,6 +13,7 @@ const data = {
       description: 'very nice jacket',
     },
     {
+      _id: '2',
       name: 'PRO SERIES hoodie',
       slug: 'PRO-hoodie',
       category: 'hoods',
@@ -23,6 +25,7 @@ const data = {
       description: 'very cool hoodie. much nice',
     },
     {
+      _id: '3',
       name: 'PRO SERIES Shirt',
       slug: 'pro-shirt',
       category: 'shirts',
