@@ -48,6 +48,74 @@ function HomeScreen() {
       <Helmet>
         <title>TheDEFT</title>
       </Helmet>
+      {/* home screen image */}
+      <div class="title-media-wrapper">
+        <div class="title-video-container">
+          <div class="title-content">
+            <h1>Project STREET</h1>
+            <button>VIEW COLLECTION</button>
+          </div>
+        </div>
+      </div>
+      {/* END home screen image */}
+
+      {/* Featured Products Container */}
+
+      <div class="feat-container">
+        <div class="container-label">
+          <h2>FEATURED ITEMS</h2>
+        </div>
+        <div class="container-label">
+          <div>
+            {loading ? (
+              <LoadingBox />
+            ) : error ? (
+              <MessageBox variant="danger">{error}</MessageBox>
+            ) : (
+              <Row>
+                {products.map((product) => (
+                  <Col key={product.slug}>
+                    <Product product={product}></Product>
+                  </Col>
+                ))}
+              </Row>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* END Featured Products Container */}
+
+      {/* Featured Products Container */}
+
+      <div class="new-container">
+        <div class="container-label">
+          <h2>NEW ITEMS</h2>
+        </div>
+        <div class="container-label">
+          <div>
+            {loading ? (
+              <LoadingBox />
+            ) : error ? (
+              <MessageBox variant="danger">{error}</MessageBox>
+            ) : (
+              <Row>
+                {products.map((product) => (
+                  <Col key={product.slug}>
+                    <Product product={product}></Product>
+                  </Col>
+                ))}
+              </Row>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* END Featured Products Container */}
+
+      <div class="footerimg"></div>
+
+      {/* Tutorial Featured Products Container }
       <h1>Featured Products</h1>
       <div className="products">
         {loading ? (
@@ -64,6 +132,7 @@ function HomeScreen() {
           </Row>
         )}
       </div>
+      {/* END Tutorial Featured Products Container */}
     </div>
   );
 }
