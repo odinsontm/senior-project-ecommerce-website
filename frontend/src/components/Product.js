@@ -26,7 +26,7 @@ function Product(props) {
       payload: { ...item, quantity },
     });
   };
-
+  /*
   return (
     <Card>
       <Link to={`/product/${product.slug}`}>
@@ -46,7 +46,35 @@ function Product(props) {
           <Button onClick={() => addToCartHandler(product)}>Add To Cart</Button>
         )}
       </Card.Body>
-    </Card>
+    </Card>*/
+
+  return (
+    <div class="productCard">
+      <div class="productCardTitle">
+        <Link to={`/product/${product.slug}`}>
+          <img
+            src={product.image}
+            className="card-img-top"
+            alt={product.name}
+          />
+        </Link>
+      </div>
+      <div class="productCardBody">
+        <Link to={`/product/${product.slug}`}>
+          <h4>{product.name}</h4>
+        </Link>
+        <Rating rating={product.rating} numReviews={product.numReviews} />
+        <p>${product.price}</p>
+        {product.countInStock === 0 ? (
+          <button variant="light" disabled>
+            Out of Stock
+          </button>
+        ) : (
+          <button onClick={() => addToCartHandler(product)}>Add To Cart</button>
+        )}
+      </div>
+    </div>
   );
 }
+
 export default Product;

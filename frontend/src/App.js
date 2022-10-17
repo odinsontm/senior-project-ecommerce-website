@@ -20,10 +20,11 @@ import cartlogo from './pics/cart.svg';
 function App() {
   const { state } = useContext(Store);
   const { cart } = state;
+
   return (
     <BrowserRouter>
       {/* Navigation for prod */}
-      <div class="site-container">
+      <div class="site-container background">
         <nav>
           <div class="parent">
             <div class="nav_menu_left">
@@ -39,12 +40,12 @@ function App() {
                 <img src={accountlogo} alt="account" />
               </Link>
               <Link to="/cart">
-                <img src={cartlogo} alt="cart" />
                 {cart.cartItems.length > 0 && (
                   <Badge pill bg="danger">
                     {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                   </Badge>
                 )}
+                <img src={cartlogo} alt="cart" />
               </Link>
             </div>
           </div>

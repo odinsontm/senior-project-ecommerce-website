@@ -33,8 +33,13 @@ button:hover {
 /* navigation styles */
 
 nav {
+  position: fixed;
+  flex: 1 0 10%;
   background-color: #111111;
   overflow: auto;
+  z-index: 5;
+  min-width: 100%;
+  top: 0;
 }
 
 nav img {
@@ -81,7 +86,7 @@ nav img {
   height: 50%;
   background-color: #222222;
   color: #eeeeee;
-  min-height: 30rem;
+  min-height: 35rem;
   position: relative;
 }
 
@@ -147,6 +152,10 @@ footer {
   background-color: #111111;
   color: #eeeeee;
   display: flex;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .footer-title {
@@ -165,6 +174,26 @@ footer {
 }
 
 /* END Footer */
+
+/* product styles */
+
+.productCard {
+  background-color: #eeeeee;
+  padding: 1rem;
+  border: #111111 1px solid;
+  color: #222222;
+}
+
+.productCardTitle {
+}
+
+.productCardBody {
+}
+
+.productCardBody button {
+}
+
+/* END product styles */
 
 .products {
   display: flex;
