@@ -1,21 +1,12 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Badge from 'react-bootstrap/Badge';
-import Container from 'react-bootstrap/Container';
-import { LinkContainer } from 'react-router-bootstrap';
-import { useContext } from 'react';
 import { Store } from './Store';
 import ScrollButton from './components/ScrollButton';
-import { Fragment } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
-import menulogo from './pics/menu.svg';
-import accountlogo from './pics/account.svg';
-import deftlogo from './pics/TheDEFT.svg';
-import cartlogo from './pics/cart.svg';
+import Navbar from './components/Navbar';
 
 function App() {
   const { state } = useContext(Store);
@@ -25,31 +16,9 @@ function App() {
     <BrowserRouter>
       {/* Navigation for prod */}
       <div class="site-container background">
-        <nav>
-          <div class="parent">
-            <div class="nav_menu_left">
-              <a href="">
-                <img src={menulogo} alt="menu" />
-              </a>
-              <Link to="/">
-                <img src={deftlogo} alt="the deft logo" />
-              </Link>
-            </div>
-            <div class="nav_menu_right">
-              <Link to="/signin">
-                <img src={accountlogo} alt="account" />
-              </Link>
-              <Link to="/cart">
-                {cart.cartItems.length > 0 && (
-                  <Badge pill bg="danger">
-                    {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
-                  </Badge>
-                )}
-                <img src={cartlogo} alt="cart" />
-              </Link>
-            </div>
-          </div>
-        </nav>
+        <Fragment>
+          <Navbar />
+        </Fragment>
 
         <main>
           <Routes>

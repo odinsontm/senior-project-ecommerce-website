@@ -73,6 +73,7 @@ function ProductScreen() {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
+      <div class="banner"></div>
       <Row>
         <Col md={6}>
           <img

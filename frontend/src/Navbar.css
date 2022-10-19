@@ -1,0 +1,40 @@
+/* navigation styles */
+
+.navAdapt {
+  position: fixed;
+  flex: 1 0 10%;
+  background-color: transparent;
+  overflow: auto;
+  z-index: 5;
+  min-width: 100%;
+  top: 0;
+}
+
+.navAdapt.active {
+  background-color: #111111;
+}
+
+.navAdapt img {
+  height: 1.2rem;
+  width: auto;
+  padding: 0 0.5rem 0 0.5rem;
+}
+
+.parent {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 1rem 0;
+}
+
+.nav_menu_left {
+  justify-content: left;
+  color: white;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.nav_menu_right {
+  justify-content: right;
+  color: #dddddd;
+  margin-right: 1rem;
+}
