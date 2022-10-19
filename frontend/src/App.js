@@ -7,6 +7,7 @@ import { Fragment, useContext, useState, useEffect } from 'react';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
 import Navbar from './components/Navbar';
+import FeaturedScreen from './screens/FeaturedScreen';
 
 function App() {
   const { state } = useContext(Store);
@@ -23,6 +24,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/product/:slug" element={<ProductScreen />} />
+            <Route path="/products/featured" element={<FeaturedScreen />} />
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/signin" element={<SigninScreen />} />
             <Route path="/" element={<HomeScreen />} />

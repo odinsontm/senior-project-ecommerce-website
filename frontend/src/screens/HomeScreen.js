@@ -7,6 +7,7 @@ import Product from '../components/Product';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import { Link } from 'react-router-dom';
 //import data from '../data';
 
 const reducer = (state, action) => {
@@ -53,7 +54,9 @@ function HomeScreen() {
         <div class="title-video-container">
           <div class="title-content">
             <h1>Project STREET</h1>
-            <button>VIEW COLLECTION</button>
+            <button>
+              <Link to={`/products/featured`}>VIEW COLLECTION</Link>
+            </button>
           </div>
         </div>
       </div>

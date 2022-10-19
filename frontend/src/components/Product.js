@@ -1,7 +1,5 @@
 import axios from 'axios';
 import { useContext, useState } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import { Store } from '../Store';
 import Rating from './Rating';

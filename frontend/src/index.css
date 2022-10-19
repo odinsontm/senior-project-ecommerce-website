@@ -171,10 +171,6 @@ footer {
 .productCardTitle {
   padding-bottom: 0.7rem;
 }
-.productCardTitle img {
-  max-height: 17rem;
-  width: auto;
-}
 
 .productCardBody {
   line-height: 80%;
