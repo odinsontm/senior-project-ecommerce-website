@@ -3,7 +3,7 @@ import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import { Store } from './Store';
 import ScrollButton from './components/ScrollButton';
-import { Fragment, useContext, useState } from 'react';
+import { Fragment, useContext, useState, useEffect } from 'react';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
 import Navbar from './components/Navbar';

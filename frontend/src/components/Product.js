@@ -78,7 +78,7 @@ function Product(props) {
           </p>
         )}
         {product.countInStock === 0 ? (
-          <button>Out of Stock</button>
+          <button disabled>Out of Stock</button>
         ) : (
           <button onClick={() => addToCartHandler(product)}>Add To Cart</button>
         )}

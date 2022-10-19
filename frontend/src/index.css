@@ -181,6 +181,34 @@ footer {
 }
 
 .productCardBody button {
+  background-color: #eeeeee;
+  border: solid 1px #111111;
+  color: #111111;
+  padding: 5px 7px;
+  font-size: 16px;
+  margin: 5px 0 5px;
+  cursor: pointer;
+}
+
+.productCardBody button:disabled {
+  background-color: #111111;
+  border: solid 1px #eeeeee;
+  color: #eeeeee;
+  padding: 5px 7px;
+  cursor: not-allowed;
+}
+
+.productCardBody button:hover {
+  background-color: #bead0f;
+  color: #eeeeee;
+  border: solid 1px #bead0f;
+}
+
+.productCardBody button:disabled:hover {
+  background-color: #111111;
+  border: solid 1px #eeeeee;
+  color: #eeeeee;
+  cursor: not-allowed;
 }
 
 /* END product styles */
