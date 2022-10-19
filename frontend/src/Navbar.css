@@ -38,3 +38,12 @@
   color: #dddddd;
   margin-right: 1rem;
 }
+
+.cartAmount {
+  margin-right: -1.2rem;
+  position: absolute;
+}
+
+.classImg {
+  margin-right: 2rem;
+}

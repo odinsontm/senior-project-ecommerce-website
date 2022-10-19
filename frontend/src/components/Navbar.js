@@ -42,7 +42,7 @@ function Navbar() {
           </Link>
           <Link to="/cart">
             {cart.cartItems.length > 0 && (
-              <Badge pill bg="danger">
+              <Badge className="cartAmount" pill bg="danger">
                 {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
               </Badge>
             )}

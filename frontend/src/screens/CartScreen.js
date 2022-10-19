@@ -38,13 +38,14 @@ export default function CartScreen() {
   };
 
   return (
-    <div>
+    <div class="main-content">
+      <div class="banner"></div>
       <Helmet>
         <title>Shopping Cart</title>
       </Helmet>
-      <h1>Shopping Cart</h1>
-      <Row>
-        <Col md={8}>
+      <h1 class="page-title">Shopping Cart</h1>
+      <Row className="justify-content-md-center main-content">
+        <Col md={6}>
           {cartItems.length === 0 ? (
             <MessageBox>
               Cart is empty. <Link to="/">Return to Store</Link>
@@ -84,7 +85,7 @@ export default function CartScreen() {
                       </Button>
                     </Col>
                     <Col md={3}>${item.price}</Col>
-                    <Col md={2}>
+                    <Col md={1}>
                       <Button
                         onClick={() => removeItemHandler(item)}
                         variant="light"

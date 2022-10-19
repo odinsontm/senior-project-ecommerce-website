@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
@@ -12,6 +12,8 @@ function Product(props) {
   const {
     cart: { cartItems },
   } = state;
+
+  const [isShown, setIsShown] = useState(false);
 
   const addToCartHandler = async (item) => {
     const existItem = cartItems.find((x) => x._id === product._id);
@@ -49,7 +51,11 @@ function Product(props) {
     </Card>*/
 
   return (
-    <div class="productCard">
+    <div
+      onMouseEnter={() => setIsShown(true)}
+      onMouseLeave={() => setIsShown(false)}
+      class="productCard"
+    >
       <div class="productCardTitle">
         <Link to={`/product/${product.slug}`}>
           <img
@@ -61,14 +67,18 @@ function Product(props) {
       </div>
       <div class="productCardBody">
         <Link to={`/product/${product.slug}`}>
-          <h4>{product.name}</h4>
+          <p>
+            <b>{product.name}</b>
+          </p>
         </Link>
-        <Rating rating={product.rating} numReviews={product.numReviews} />
         <p>${product.price}</p>
+        {isShown && (
+          <p>
+            <Rating rating={product.rating} numReviews={product.numReviews} />
+          </p>
+        )}
         {product.countInStock === 0 ? (
-          <button variant="light" disabled>
-            Out of Stock
-          </button>
+          <button>Out of Stock</button>
         ) : (
           <button onClick={() => addToCartHandler(product)}>Add To Cart</button>
         )}
