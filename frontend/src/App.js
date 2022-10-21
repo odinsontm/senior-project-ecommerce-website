@@ -19,24 +19,26 @@ function App() {
   return (
     <BrowserRouter>
       {/* Navigation for prod */}
-      <div class="site-container">
-        <ToastContainer position="bottom-center" limit={1} />
-        <Fragment>
-          <Navbar />
-        </Fragment>
+      <div className="site-container">
+        <div className="content-wrap">
+          <ToastContainer position="bottom-center" limit={1} />
+          <Fragment>
+            <Navbar />
+          </Fragment>
 
-        <main>
-          <Routes>
-            <Route path="/product/:slug" element={<ProductScreen />} />
-            <Route path="/products/featured" element={<FeaturedScreen />} />
-            <Route path="/cart" element={<CartScreen />} />
-            <Route path="/signin" element={<SigninScreen />} />
-            <Route path="/shipping" element={<ShippingAddressScreen />} />
-            <Route path="/" element={<HomeScreen />} />
-          </Routes>
-        </main>
+          <main>
+            <Routes>
+              <Route path="/product/:slug" element={<ProductScreen />} />
+              <Route path="/products/featured" element={<FeaturedScreen />} />
+              <Route path="/cart" element={<CartScreen />} />
+              <Route path="/signin" element={<SigninScreen />} />
+              <Route path="/shipping" element={<ShippingAddressScreen />} />
+              <Route path="/" element={<HomeScreen />} />
+            </Routes>
+          </main>
+        </div>
         <footer>
-          <div class="footer-title">
+          <div className="footer-title">
             <Link to="/#">
               <h4>HOME</h4>
             </Link>

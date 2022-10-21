@@ -6,6 +6,7 @@ body {
 
 .site-container {
   min-height: 100vh;
+  position: relative;
 }
 
 .main-content {
@@ -31,14 +32,17 @@ button:hover {
 }
 
 .banner {
-  height: 10rem;
+  height: 8rem;
   background-image: linear-gradient(to top, transparent, #131313),
     url('./pics/banner.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0% 65%;
-  margin-top: -5%;
   margin-bottom: 5%;
+}
+
+.content-wrap {
+  padding-bottom: 30rem;
 }
 
 /* title img/vid */
@@ -120,6 +124,7 @@ button:hover {
 /* Footer */
 
 footer {
+  position: absolute;
   background-color: #111111;
   color: #eeeeee;
   display: flex;
@@ -127,6 +132,7 @@ footer {
   left: 0;
   width: 100%;
   overflow: hidden;
+  height: 30rem;
 }
 
 .footer-title {

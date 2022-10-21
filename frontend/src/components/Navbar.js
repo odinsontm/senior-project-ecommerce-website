@@ -43,7 +43,7 @@ function Navbar() {
           </Link>
         </div>
         <div class="nav_menu_right">
-          <div>
+          <div className="account">
             {userInfo ? (
               <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
                 <Link to="/profile">
