@@ -1,4 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import { Store } from './Store';
@@ -17,6 +19,7 @@ function App() {
     <BrowserRouter>
       {/* Navigation for prod */}
       <div class="site-container background">
+        <ToastContainer position="bottom-center" limit={1} />
         <Fragment>
           <Navbar />
         </Fragment>

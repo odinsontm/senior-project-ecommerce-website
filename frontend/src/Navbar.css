@@ -35,6 +35,7 @@
 }
 
 .nav_menu_right {
+  display: flex;
   justify-content: right;
   color: #dddddd;
   margin-right: 1rem;
