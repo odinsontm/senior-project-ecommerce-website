@@ -4,7 +4,6 @@
   position: fixed;
   flex: 1 0 10%;
   background-color: transparent;
-  overflow: auto;
   z-index: 5;
   min-width: 100%;
   top: 0;

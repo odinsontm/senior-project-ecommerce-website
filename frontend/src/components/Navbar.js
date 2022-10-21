@@ -16,6 +16,7 @@ function Navbar() {
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });
     localStorage.removeItem('userInfo');
+    localStorage.removeItem('shippingAddress');
   };
 
   const [navAdapt, setNavbar] = useState(false);

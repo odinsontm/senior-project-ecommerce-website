@@ -10,6 +10,7 @@ import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
 import Navbar from './components/Navbar';
 import FeaturedScreen from './screens/FeaturedScreen';
+import ShippingAddressScreen from './screens/ShippingAddressScreen';
 
 function App() {
   const { state } = useContext(Store);
@@ -30,6 +31,7 @@ function App() {
             <Route path="/products/featured" element={<FeaturedScreen />} />
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/signin" element={<SigninScreen />} />
+            <Route path="/shipping" element={<ShippingAddressScreen />} />
             <Route path="/" element={<HomeScreen />} />
           </Routes>
         </main>
