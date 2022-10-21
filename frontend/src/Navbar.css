@@ -2,11 +2,11 @@
 
 .navAdapt {
   position: fixed;
+  top: 0;
+  z-index: 999;
   flex: 1 0 10%;
   background-color: transparent;
-  z-index: 5;
   min-width: 100%;
-  top: 0;
   transition: 0.5s;
 }
 

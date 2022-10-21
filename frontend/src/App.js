@@ -19,7 +19,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* Navigation for prod */}
-      <div class="site-container background">
+      <div class="site-container">
         <ToastContainer position="bottom-center" limit={1} />
         <Fragment>
           <Navbar />

@@ -1,12 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;900&display=swap');
-
-* {
-  font-family: 'Inter', sans-serif;
-}
-
 body {
-  margin: 0;
-
   font-weight: 500;
   font-size: 62.5%;
   background-color: #dddddd;
@@ -14,11 +6,6 @@ body {
 
 .site-container {
   min-height: 100vh;
-  margin-top: 5%;
-}
-
-main {
-  flex: 1;
 }
 
 .main-content {
@@ -58,7 +45,7 @@ button:hover {
 
 .title-media-wrapper {
   width: 100%;
-  margin-top: -5%;
+  margin-top: 0;
   text-align: center;
 }
 
