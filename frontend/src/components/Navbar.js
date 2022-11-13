@@ -4,10 +4,10 @@ import { Store } from '../Store';
 import '../Navbar.css';
 import Badge from 'react-bootstrap/Badge';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import menulogo from '../pics/menu.svg';
 import accountlogo from '../pics/account.svg';
 import deftlogo from '../pics/TheDEFT.svg';
 import cartlogo from '../pics/cart.svg';
+import Sidebar from './Sidebar';
 
 function Navbar() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -36,11 +36,9 @@ function Navbar() {
     <nav className={navAdapt ? 'navAdapt active' : 'navAdapt'}>
       <div class="parent">
         <div class="nav_menu_left">
-          <a href="/">
-            <img src={menulogo} alt="menu" />
-          </a>
+          <Sidebar />
           <Link to="/">
-            <img src={deftlogo} alt="the deft logo" />
+            <img className="deft" src={deftlogo} alt="the deft logo" />
           </Link>
         </div>
         <div class="nav_menu_right">
