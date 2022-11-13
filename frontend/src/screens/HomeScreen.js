@@ -8,6 +8,8 @@ import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Link } from 'react-router-dom';
+import street from '../pics/ProjectStreet.svg';
+import styled from 'styled-components';
 //import data from '../data';
 
 const reducer = (state, action) => {
@@ -44,6 +46,12 @@ function HomeScreen() {
     };
     fetchData();
   }, []);
+
+  const ProjectStreet = styled.img`
+    width: 75%;
+    height auto;
+  `;
+
   return (
     <div>
       <Helmet>
@@ -53,10 +61,12 @@ function HomeScreen() {
       <div class="title-media-wrapper">
         <div class="title-video-container">
           <div class="title-content">
-            <h1>Project STREET</h1>
-            <button>
-              <Link to={`/products/featured`}>VIEW COLLECTION</Link>
-            </button>
+            <ProjectStreet src={street} alt="account" />
+            <div>
+              <Link to={`/products/featured`}>
+                <button>VIEW COLLECTION</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

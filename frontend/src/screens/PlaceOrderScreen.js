@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet-async';
 import { Store } from '../Store';
 import { getError } from '../utils';
 import { toast } from 'react-toastify';
+import styled from 'styled-components';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -80,6 +81,30 @@ export default function PlaceOrderScreen() {
     }
   }, [cart, navigate]);
 
+  const Contain = styled.div`
+    background-image: linear-gradient(to bottom right, transparent, white);
+    border-left: 3px solid #bead0f;
+    padding: 1rem;
+    margin: 1rem 0 1rem 0;
+    transition: 350ms;
+
+    &:hover {
+      color: #ffffff;
+      background-image: linear-gradient(to bottom right, #111111, #333333);
+      scale: 1.05;
+    }
+  `;
+
+  const Item = styled.div`
+    border-bottom: 1px solid;
+    padding: 1rem 0 1rem 0;
+  `;
+
+  const Thumbnail = styled.img`
+    height: 10rem;
+    width: auto;
+  `;
+
   return (
     <div>
       <div class="banner"></div>
@@ -88,13 +113,14 @@ export default function PlaceOrderScreen() {
           <title>Preview Order</title>
         </Helmet>
 
-        <Row className="justify-content-md-center">
-          <Col md={6}>
-            <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
-            <h1>Preview Order</h1>
+        <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
+        <h1 className="page-title">Preview Order</h1>
+
+        <Row className="justify-content-md-center main-content">
+          <Col md={10}>
             <Row>
               <Col md={8}>
-                <Card className="mb-3">
+                <Contain>
                   <Card.Body>
                     <Card.Title>Shipping</Card.Title>
                     <Card.Text>
@@ -107,8 +133,8 @@ export default function PlaceOrderScreen() {
                     </Card.Text>
                     <Link to="/shipping">Edit</Link>
                   </Card.Body>
-                </Card>
-                <Card className="mb-3">
+                </Contain>
+                <Contain>
                   <Card.Body>
                     <Card.Title>Payment</Card.Title>
                     <Card.Text>
@@ -116,60 +142,70 @@ export default function PlaceOrderScreen() {
                     </Card.Text>
                     <Link to="/payment">Edit</Link>
                   </Card.Body>
-                </Card>
-                <Card className="mb-3">
-                  <Card.Body>
-                    <Card.Title>Items</Card.Title>
-                    <ListGroup variant="flush">
-                      {cart.cartItems.map((item) => (
-                        <ListGroup.Item key={item._id}>
-                          <Row className="align-items-center">
-                            <Col md={6}>
-                              <img
+                </Contain>
+                <Contain>
+                  <Card.Title>Items</Card.Title>
+                  <ListGroup variant="flush">
+                    {cart.cartItems.map((item) => (
+                      <Item key={item._id}>
+                        <Row className="d-flex justify-content-between align-items-center">
+                          <Col md={2}>
+                            <Link to={`/product/${item.slug}`}>
+                              <Thumbnail
                                 src={item.image}
                                 alt={item.name}
-                                className="img-fluid img-thumbnail"
-                              ></img>{' '}
-                              <Link to={`/product/${item.slug}`}>
-                                {item.name}
-                              </Link>
-                            </Col>
-                            <Col md={3}>
-                              <span>{item.quantity}</span>
-                            </Col>
-                            <Col md={3}>${item.price}</Col>
-                          </Row>
-                        </ListGroup.Item>
-                      ))}
-                    </ListGroup>
-                    <Link to="/cart">Edit</Link>
-                  </Card.Body>
-                </Card>
+                              ></Thumbnail>{' '}
+                            </Link>
+                          </Col>
+                          <Col md={4}>
+                            <Link
+                              to={`/product/${item.slug}`}
+                              style={{ textDecoration: 'none' }}
+                            >
+                              <h4>{item.name}</h4>
+                            </Link>
+                            <p>${item.price}</p>
+                          </Col>
+                          <Col md={1}>
+                            <span>{item.quantity}</span>
+                          </Col>
+                          <Col md={1}>
+                            <Link to="/cart">Edit</Link>
+                          </Col>
+                        </Row>
+                      </Item>
+                    ))}
+                  </ListGroup>
+                </Contain>
               </Col>
-              <Col md={4}>
-                <Card>
+              <Col md={1}></Col>
+              <Col md={3}>
+                <div>
                   <Card.Body>
-                    <Card.Title>Order Summary</Card.Title>
+                    <h4 style={{ marginBottom: '1rem' }}>Order Summary</h4>
                     <ListGroup variant="flush">
-                      <ListGroup.Item>
+                      <div>
                         <Row>
                           <Col>Items</Col>
                           <Col>${cart.itemsPrice.toFixed(2)}</Col>
                         </Row>
-                      </ListGroup.Item>
-                      <ListGroup.Item>
+                      </div>
+                      <hr />
+                      <div>
                         <Row>
                           <Col>Shipping</Col>
                           <Col>${cart.shippingPrice.toFixed(2)}</Col>
                         </Row>
-                      </ListGroup.Item>
-                      <ListGroup.Item>
+                      </div>
+                      <hr />
+                      <div>
                         <Row>
                           <Col>Tax</Col>
                           <Col>${cart.taxPrice.toFixed(2)}</Col>
                         </Row>
-                      </ListGroup.Item>
-                      <ListGroup.Item>
+                      </div>
+                      <hr />
+                      <div>
                         <Row>
                           <Col>
                             <strong>Order Total</strong>
@@ -178,22 +214,23 @@ export default function PlaceOrderScreen() {
                             <strong>${cart.totalPrice.toFixed(2)}</strong>
                           </Col>
                         </Row>
-                      </ListGroup.Item>
-                      <ListGroup.Item>
-                        <div classNAme="d-grid">
+                      </div>
+                      <div>
+                        <div className="d-grid">
                           <button
                             type="button"
                             onClick={placeOrderHandler}
                             disabled={cart.cartItems.length === 0}
+                            style={{ margin: '1rem 0 0 0' }}
                           >
                             Place Order
                           </button>
                         </div>
                         {loading && <LoadingBox></LoadingBox>}
-                      </ListGroup.Item>
+                      </div>
                     </ListGroup>
                   </Card.Body>
-                </Card>
+                </div>
               </Col>
             </Row>
           </Col>

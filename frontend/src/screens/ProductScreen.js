@@ -3,16 +3,13 @@ import { useContext, useEffect, useReducer } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Badge from 'react-bootstrap/Badge';
 import Rating from '../components/Rating';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { getError } from '../utils';
 import { Store } from '../Store';
+import styled from 'styled-components';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -67,6 +64,22 @@ function ProductScreen() {
     });
     navigate('/cart');
   };
+
+  const Price = styled.h3`
+    margin: 1rem 0 1rem 0;
+    font-weight: bold;
+  `;
+
+  const Des = styled.h6`
+    font-weight: bold;
+    margin: 1rem 0 1rem 0;
+  `;
+
+  const Button = styled.button`
+    display: block;
+    width: 65%;
+  `;
+
   return loading ? (
     <LoadingBox />
   ) : error ? (
@@ -75,69 +88,36 @@ function ProductScreen() {
     <div>
       <div class="banner"></div>
       <Row className="justify-content-md-center main-content">
-        <Col md={3}>
+        <Col md={4}>
           <img
             className="img-large"
             src={product.image}
             alt={product.name}
           ></img>
         </Col>
-        <Col md={3}>
-          <ListGroup variant="flush">
-            <ListGroup.Item>
-              <Helmet>
-                <title>{product.name}</title>
-              </Helmet>
-              <h1>{product.name}</h1>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <Rating
-                rating={product.rating}
-                numReviews={product.numReviews}
-              ></Rating>
-            </ListGroup.Item>
-            <ListGroup.Item>Price : ${product.price}</ListGroup.Item>
-            <ListGroup.Item>
-              Description:
-              <p>{product.description}</p>
-            </ListGroup.Item>
-          </ListGroup>
-        </Col>
-        <Col md={3}>
-          <Card>
-            <Card.Body>
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Price:</Col>
-                    <Col>${product.price}</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Availability:</Col>
-                    <Col>
-                      {product.countInStock > 0 ? (
-                        <Badge bg="success">In Stock</Badge>
-                      ) : (
-                        <Badge bg="danger">Out of Stock</Badge>
-                      )}
-                    </Col>
-                  </Row>
-                </ListGroup.Item>
+        <Col md={1}></Col>
+        <Col md={4}>
+          <Helmet>
+            <title>{product.name}</title>
+          </Helmet>
+          <h1>{product.name}</h1>
+          <Price>${product.price}</Price>
+          <Rating
+            rating={product.rating}
+            numReviews={product.numReviews}
+          ></Rating>
 
-                {product.countInStock > 0 && (
-                  <ListGroup.Item>
-                    <div className="d-grid">
-                      <Button onClick={addToCartHandler} variant="primary">
-                        Add to Cart
-                      </Button>
-                    </div>
-                  </ListGroup.Item>
-                )}
-              </ListGroup>
-            </Card.Body>
-          </Card>
+          <hr />
+          <>
+            {product.countInStock > 0 ? <p>In Stock</p> : <p>Out of Stock</p>}
+          </>
+          {product.countInStock > 0 && (
+            <Button onClick={addToCartHandler} variant="primary">
+              Add to Cart
+            </Button>
+          )}
+          <Des>DESCRIPTION</Des>
+          <p>{product.description}</p>
         </Col>
       </Row>
     </div>

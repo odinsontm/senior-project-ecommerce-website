@@ -12,6 +12,7 @@ export const Button = styled.div`
   cursor: pointer;
   padding: 15px 15px 0px 15px;
   font-size: 18px;
+  transition: 350ms;
 `;
 
 export default Button;

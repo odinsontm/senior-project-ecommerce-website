@@ -47,7 +47,7 @@ const data = {
       countInStock: 10,
       rating: 5,
       numReviews: 100,
-      description: 'cool short, much wow, awesome!',
+      description: 'cool shirt, much wow, awesome!',
     },
   ],
 };
