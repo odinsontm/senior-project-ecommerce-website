@@ -80,6 +80,7 @@ function Product(props) {
         ) : (
           <button onClick={() => addToCartHandler(product)}>Add To Cart</button>
         )}
+        {!isShown && <p className="starholder"></p>}
       </div>
     </div>
   );

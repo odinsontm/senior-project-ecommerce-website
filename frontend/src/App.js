@@ -3,9 +3,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
-import { Store } from './Store';
 import ScrollButton from './components/ScrollButton';
-import { Fragment, useContext, useState, useEffect } from 'react';
+import { Fragment } from 'react';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
 import Navbar from './components/Navbar';
@@ -48,18 +47,9 @@ function App() {
               <h4>HOME</h4>
             </Link>
             <h4>NEW</h4>
+            <h4>PRODUCTS</h4>
             <h4>ABOUT/CONTACT</h4>
-            <h4>ITEMS</h4>
-            <h4>socials here</h4>
             <h2>© 2022 TheDEFT</h2>
-          </div>
-          <div class="footer-title">
-            <Link to="/signin/#">
-              <h4>SIGN IN</h4>
-            </Link>
-            <Link to="/cart/#">
-              <h4>CART</h4>
-            </Link>
           </div>
         </footer>
         <Fragment>

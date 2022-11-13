@@ -159,6 +159,13 @@ footer {
   padding: 0.7rem;
   color: #222222;
   text-align: left;
+  transition: 350ms;
+}
+
+.productCard:hover {
+  transform: scale(1.1);
+  outline: #111111 2px solid;
+  transition: 350ms;
 }
 
 .productCardTitle {
@@ -177,6 +184,10 @@ footer {
   font-size: 16px;
   margin: 5px 0 5px;
   cursor: pointer;
+}
+
+.starholder {
+  height: 16px;
 }
 
 .productCardBody button:disabled {
