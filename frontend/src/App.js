@@ -14,6 +14,8 @@ import SignupScreen from './screens/SignupScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import AboutContactScreen from './screens/AboutContactScreen';
+import AllProductsScreen from './screens/AllProductsScreen';
+import NewProductScreen from './screens/NewProductScreen';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/products/featured" element={<FeaturedScreen />} />
+              <Route path="/products/all" element={<AllProductsScreen />} />
+              <Route path="/products/new" element={<NewProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />

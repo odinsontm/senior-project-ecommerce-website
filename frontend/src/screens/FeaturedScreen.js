@@ -49,8 +49,10 @@ function FeaturedScreen() {
         <title>TheDEFT</title>
       </Helmet>
       <div className="main-content">
-        <div class="banner"></div>
-        <h1 class="page-title">Featured Products</h1>
+        <div class="banner2">
+          <h1 class="page-title2">FEATURED PRODUCTS</h1>
+        </div>
+
         <div>
           {loading ? (
             <LoadingBox />
@@ -58,11 +60,20 @@ function FeaturedScreen() {
             <MessageBox variant="danger">{error}</MessageBox>
           ) : (
             <Row className="justify-content-md-center main-content products">
-              {products.map((product) => (
-                <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
-                  <Product product={product}></Product>
-                </Col>
-              ))}
+              {products.map((product) => {
+                if (product.isFeatured)
+                  return (
+                    <Col
+                      key={product.slug}
+                      sm={6}
+                      md={4}
+                      lg={3}
+                      className="mb-3"
+                    >
+                      <Product product={product}></Product>
+                    </Col>
+                  );
+              })}
             </Row>
           )}
         </div>

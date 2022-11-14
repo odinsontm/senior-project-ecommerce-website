@@ -31,7 +31,7 @@ function HomeScreen() {
     loading: true,
     error: '',
   });
-  //const [products, setProducts] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
@@ -41,8 +41,6 @@ function HomeScreen() {
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });
       }
-
-      //setProducts(result.data);
     };
     fetchData();
   }, []);
@@ -87,11 +85,14 @@ function HomeScreen() {
               <MessageBox variant="danger">{error}</MessageBox>
             ) : (
               <Row>
-                {products.map((product) => (
-                  <Col key={product.slug}>
-                    <Product product={product}></Product>
-                  </Col>
-                ))}
+                {products.map((product) => {
+                  if (product.isFeatured)
+                    return (
+                      <Col key={product.slug}>
+                        <Product product={product}></Product>
+                      </Col>
+                    );
+                })}
               </Row>
             )}
           </div>
@@ -100,7 +101,7 @@ function HomeScreen() {
 
       {/* END Featured Products Container */}
 
-      {/* Featured Products Container */}
+      {/* New Products Container */}
 
       <div class="new-container">
         <div class="container-label">
@@ -114,18 +115,26 @@ function HomeScreen() {
               <MessageBox variant="danger">{error}</MessageBox>
             ) : (
               <Row>
-                {products.map((product) => (
-                  <Col key={product.slug}>
-                    <Product product={product}></Product>
-                  </Col>
-                ))}
+                {products.map((product) => {
+                  const str = product.createdAt;
+                  const then = new Date(str.substring(0, 10));
+                  let today = new Date();
+                  const msBetween = Math.abs(then.getTime() - today.getTime());
+                  const daysBetween = msBetween / (24 * 60 * 60 * 1000);
+                  if (daysBetween < 30)
+                    return (
+                      <Col key={product.slug}>
+                        <Product product={product}></Product>
+                      </Col>
+                    );
+                })}
               </Row>
             )}
           </div>
         </div>
       </div>
 
-      {/* END Featured Products Container */}
+      {/* END New Products Container */}
 
       <div class="footerimg"></div>
 

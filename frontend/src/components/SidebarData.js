@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const SidebarData = [
   {
     title: 'HOME',
@@ -7,11 +5,11 @@ export const SidebarData = [
   },
   {
     title: 'PRODUCTS',
-    path: '/',
+    path: '#',
     subNav: [
       {
         title: 'ALL',
-        path: '/',
+        path: '/products/all',
       },
       {
         title: 'FEATURED',
@@ -19,7 +17,7 @@ export const SidebarData = [
       },
       {
         title: 'NEW',
-        path: '/products/featured',
+        path: '/products/new',
       },
     ],
   },

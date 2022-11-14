@@ -26,6 +26,7 @@ const data = {
       rating: 4.5,
       numReviews: 9,
       description: 'very nice jacket',
+      isFeatured: true,
     },
     {
       name: 'PRO SERIES hoodie',
@@ -37,6 +38,7 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       description: 'very cool hoodie. much nice',
+      isFeatured: true,
     },
     {
       name: 'PRO SERIES Shirt',
@@ -48,6 +50,7 @@ const data = {
       rating: 5,
       numReviews: 100,
       description: 'cool shirt, much wow, awesome!',
+      isFeatured: true,
     },
   ],
 };
