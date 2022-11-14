@@ -253,6 +253,7 @@ footer {
 
 .img-large {
   max-width: 100%;
+  padding-bottom: 1rem;
 }
 
 .img-thumbnail {
@@ -264,7 +265,7 @@ footer {
 }
 
 .card-img-top {
-  height: 20rem;
+  height: 17rem;
   width: 100%;
   object-fit: cover;
 }

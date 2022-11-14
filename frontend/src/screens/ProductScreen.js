@@ -87,7 +87,7 @@ function ProductScreen() {
   ) : (
     <div>
       <div class="banner"></div>
-      <Row className="justify-content-md-center main-content">
+      <Row className="justify-content-md-center main-content products">
         <Col md={4}>
           <img
             className="img-large"

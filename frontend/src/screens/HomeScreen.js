@@ -85,7 +85,7 @@ function HomeScreen() {
               <MessageBox variant="danger">{error}</MessageBox>
             ) : (
               <Row>
-                {products.map((product) => {
+                {products.slice(0, 3).map((product) => {
                   if (product.isFeatured)
                     return (
                       <Col key={product.slug}>
@@ -115,7 +115,7 @@ function HomeScreen() {
               <MessageBox variant="danger">{error}</MessageBox>
             ) : (
               <Row>
-                {products.map((product) => {
+                {products.slice(0, 3).map((product) => {
                   const str = product.createdAt;
                   const then = new Date(str.substring(0, 10));
                   let today = new Date();
@@ -137,25 +137,6 @@ function HomeScreen() {
       {/* END New Products Container */}
 
       <div class="footerimg"></div>
-
-      {/* Tutorial Featured Products Container }
-      <h1>Featured Products</h1>
-      <div className="products">
-        {loading ? (
-          <LoadingBox />
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <Row>
-            {products.map((product) => (
-              <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
-                <Product product={product}></Product>
-              </Col>
-            ))}
-          </Row>
-        )}
-      </div>
-      {/* END Tutorial Featured Products Container */}
     </div>
   );
 }
