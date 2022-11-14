@@ -38,13 +38,7 @@ button:hover {
 
 .banner {
   height: 8rem;
-  background-image: linear-gradient(
-      to top,
-      #eeeeee,
-      transparent,
-      transparent,
-      #131313
-    ),
+  background-image: linear-gradient(to top, #eeeeee, transparent, #131313),
     url('./pics/interior.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -225,9 +219,7 @@ footer {
 /* END product styles */
 
 .products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  padding: 2.5rem;
 }
 
 .product {

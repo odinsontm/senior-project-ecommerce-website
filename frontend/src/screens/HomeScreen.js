@@ -48,8 +48,9 @@ function HomeScreen() {
   }, []);
 
   const ProjectStreet = styled.img`
-    width: 75%;
+    width: 15rem;
     height auto;
+    margin-bottom: 1rem;
   `;
 
   return (

@@ -36,11 +36,6 @@ export default function CartScreen() {
     navigate('/signin?redirect=/shipping');
   };
 
-  const Button = styled.button`
-    background-color: #eeeeee;
-    color: black;
-  `;
-
   const Item = styled.div`
     border-bottom: 1px solid;
     padding: 1rem 0 1rem 0;
@@ -49,6 +44,29 @@ export default function CartScreen() {
   const Thumbnail = styled.img`
     height: 10rem;
     width: auto;
+  `;
+
+  const Contain = styled.div`
+    background-image: linear-gradient(to bottom right, transparent, white);
+    border-left: 3px solid #bead0f;
+    padding: 1rem;
+    margin: 1rem 0 1rem 0;
+    transition: 350ms;
+
+    &:hover {
+      color: #ffffff;
+      background-image: linear-gradient(to bottom right, #111111, #333333);
+      scale: 1.05;
+    }
+  `;
+
+  const Button = styled.button`
+    background-color: transparent;
+    color: #0d6efd;
+
+    &:hover {
+      background-color: #eeeeee;
+    }
   `;
 
   return (
@@ -68,51 +86,53 @@ export default function CartScreen() {
             <ListGroup>
               {cartItems.map((item) => (
                 <div>
-                  <Item key={item._id}>
-                    <Row className="d-flex justify-content-between align-items-center">
-                      <Col md={3}>
-                        <Link to={`/product/${item.slug}`}>
-                          <Thumbnail
-                            src={item.image}
-                            alt={item.name}
-                          ></Thumbnail>{' '}
-                        </Link>
-                      </Col>
-                      <Col md={4}>
-                        <Link
-                          to={`/product/${item.slug}`}
-                          style={{ textDecoration: 'none' }}
-                        >
-                          <h4>{item.name}</h4>
-                        </Link>
-                        <p>${item.price}</p>
-                      </Col>
-                      <Col md={3}>
-                        <Button
-                          onClick={() =>
-                            updateCartHandler(item, item.quantity - 1)
-                          }
-                          disabled={item.quantity === 1}
-                        >
-                          <i className="fas fa-minus-circle"></i>
-                        </Button>{' '}
-                        <span>{item.quantity}</span>{' '}
-                        <Button
-                          onClick={() =>
-                            updateCartHandler(item, item.quantity + 1)
-                          }
-                          disabled={item.quantity === item.countInStock}
-                        >
-                          <i className="fas fa-plus-circle"></i>
-                        </Button>
-                      </Col>
-                      <Col md={2}>
-                        <Button onClick={() => removeItemHandler(item)}>
-                          <i className="fas fa-trash"></i>
-                        </Button>
-                      </Col>
-                    </Row>
-                  </Item>
+                  <Contain>
+                    <Item key={item._id}>
+                      <Row className="d-flex justify-content-between align-items-center">
+                        <Col md={3}>
+                          <Link to={`/product/${item.slug}`}>
+                            <Thumbnail
+                              src={item.image}
+                              alt={item.name}
+                            ></Thumbnail>{' '}
+                          </Link>
+                        </Col>
+                        <Col md={4}>
+                          <Link
+                            to={`/product/${item.slug}`}
+                            style={{ textDecoration: 'none' }}
+                          >
+                            <h4>{item.name}</h4>
+                          </Link>
+                          <p>${item.price}</p>
+                        </Col>
+                        <Col md={3}>
+                          <Button
+                            onClick={() =>
+                              updateCartHandler(item, item.quantity - 1)
+                            }
+                            disabled={item.quantity === 1}
+                          >
+                            <i className="fas fa-minus-circle"></i>
+                          </Button>{' '}
+                          <span>{item.quantity}</span>{' '}
+                          <Button
+                            onClick={() =>
+                              updateCartHandler(item, item.quantity + 1)
+                            }
+                            disabled={item.quantity === item.countInStock}
+                          >
+                            <i className="fas fa-plus-circle"></i>
+                          </Button>
+                        </Col>
+                        <Col md={2}>
+                          <Button onClick={() => removeItemHandler(item)}>
+                            <i className="fas fa-trash"></i>
+                          </Button>
+                        </Col>
+                      </Row>
+                    </Item>
+                  </Contain>
                 </div>
               ))}
             </ListGroup>

@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import HomeScreen from './screens/HomeScreen';
@@ -42,12 +42,27 @@ function App() {
         </div>
         <footer>
           <div className="footer-title">
-            <Link to="/#">
+            <Link to="/" style={{ textDecoration: 'none', color: '#eeeeee' }}>
               <h4>HOME</h4>
             </Link>
-            <h4>NEW</h4>
-            <h4>PRODUCTS</h4>
-            <h4>ABOUT/CONTACT</h4>
+            <Link
+              to="/products/new"
+              style={{ textDecoration: 'none', color: '#eeeeee' }}
+            >
+              <h4>NEW</h4>
+            </Link>
+            <Link
+              to="/products/featured"
+              style={{ textDecoration: 'none', color: '#eeeeee' }}
+            >
+              <h4>PRODUCTS</h4>
+            </Link>
+            <Link
+              to="/about"
+              style={{ textDecoration: 'none', color: '#eeeeee' }}
+            >
+              <h4>ABOUT/CONTACT</h4>
+            </Link>
             <h2>© 2022 TheDEFT</h2>
           </div>
         </footer>
