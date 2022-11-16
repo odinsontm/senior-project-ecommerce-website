@@ -116,7 +116,7 @@ export default function PlaceOrderScreen() {
         <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
         <h1 className="page-title">Preview Order</h1>
 
-        <Row className="justify-content-md-center main-content">
+        <Row className="justify-content-md-center main-content products">
           <Col md={10}>
             <Row>
               <Col md={8}>

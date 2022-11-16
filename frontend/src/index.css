@@ -97,35 +97,70 @@ button:hover {
 /* END title img/vid */
 
 /* Featured Container */
+@media only screen and (min-width: 800px) {
+  .feat-container {
+    display: flex;
+    align-items: center;
+    background-color: #131313;
+    color: #eeeeee;
+    justify-content: space-evenly;
+  }
 
-.feat-container {
-  display: flex;
-  align-items: center;
-  background-color: #131313;
-  color: #eeeeee;
-  justify-content: space-evenly;
+  .container-label {
+    margin: 5rem 0 5rem 0;
+    text-align: center;
+    max-width: 50%;
+  }
 }
 
-.container-label {
-  margin: 5rem 0 5rem 0;
-  text-align: center;
-  max-width: 50%;
+@media only screen and (max-width: 800px) {
+  .feat-container {
+    background-color: #131313;
+    color: #eeeeee;
+    margin-bottom: 2rem;
+  }
+
+  .container-label {
+    margin: 0 5% 2rem 5%;
+    text-align: center;
+  }
 }
 
 /* END Featured Container */
 
 /* New Container */
 
-.new-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: #eeeeee;
-  color: #222222;
-  flex-direction: row-reverse;
+@media only screen and (min-width: 800px) {
+  .new-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #eeeeee;
+    color: #222222;
+    flex-direction: row-reverse;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .new-container {
+    background-color: #eeeeee;
+    color: #222222;
+    margin-bottom: 2rem;
+  }
+
+  .container-label {
+    margin: 0 5% 2rem 5%;
+    text-align: center;
+  }
 }
 
 /* END New Container */
+
+@media only screen and (max-width: 800px) {
+  .mobile-res {
+    flex-direction: column-reverse;
+  }
+}
 
 /* FooterImg */
 
@@ -264,7 +299,7 @@ footer {
   max-width: 600px;
 }
 
-.card-img-top {
+.card-img-prod {
   height: 17rem;
   width: 100%;
   object-fit: cover;
@@ -283,3 +318,7 @@ footer {
 }
 
 /* END checkout steps */
+
+.home-prod {
+  margin-bottom: 2rem;
+}

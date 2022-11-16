@@ -40,7 +40,7 @@ export default function PaymentMethodScreen() {
         </Helmet>
         <CheckoutSteps step1 step2 step3></CheckoutSteps>
 
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-md-center products">
           <Col md={6}>
             <h1 className="payment-title">Payment Method</h1>
             <Form onSubmit={submitHandler}>

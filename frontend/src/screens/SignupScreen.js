@@ -57,7 +57,7 @@ export default function SignupScreen() {
           <title>Sign Up</title>
         </Helmet>
 
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-md-center products">
           <Col md={6}>
             <h1 className="my-3">Sign Up</h1>
             <Form onSubmit={submitHandler}>

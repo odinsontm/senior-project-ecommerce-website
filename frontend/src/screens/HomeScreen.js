@@ -88,7 +88,13 @@ function HomeScreen() {
                 {products.slice(0, 3).map((product) => {
                   if (product.isFeatured)
                     return (
-                      <Col key={product.slug}>
+                      <Col
+                        key={product.slug}
+                        lg={4}
+                        md={3}
+                        sm={1}
+                        className="home-prod"
+                      >
                         <Product product={product}></Product>
                       </Col>
                     );
@@ -123,7 +129,13 @@ function HomeScreen() {
                   const daysBetween = msBetween / (24 * 60 * 60 * 1000);
                   if (daysBetween < 30)
                     return (
-                      <Col key={product.slug}>
+                      <Col
+                        key={product.slug}
+                        lg={4}
+                        md={3}
+                        sm={1}
+                        className="home-prod"
+                      >
                         <Product product={product}></Product>
                       </Col>
                     );
