@@ -9,7 +9,7 @@ export default function AboutContactScreen() {
   const AboutMe = styled.img`
   width: 90%;
   height auto;
-  margin: 1rem 5% 0 5%;
+  margin: 1rem 0 0 10%;
   text-align: center;
 `;
 
