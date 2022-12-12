@@ -1,3 +1,7 @@
+/**
+ * Model used to create users in the database
+ */
+
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema(

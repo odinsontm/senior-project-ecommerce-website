@@ -1,3 +1,7 @@
+/**
+ * The base functionality for the store, adding to cart, saving to cache
+ */
+
 import { createContext, useReducer } from 'react';
 
 export const Store = createContext();

@@ -1,3 +1,7 @@
+/**
+ * Sign in form, used for authentication.
+ */
+
 import { Helmet } from 'react-helmet-async';
 import Axios from 'axios';
 import { Link, useLocation, useNavigate } from 'react-router-dom';

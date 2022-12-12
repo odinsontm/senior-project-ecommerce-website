@@ -1,3 +1,7 @@
+/**
+ * Contains all the Home Screen sections
+ */
+
 import { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
 import logger from 'use-reducer-logger';
@@ -84,8 +88,9 @@ function HomeScreen() {
             ) : error ? (
               <MessageBox variant="danger">{error}</MessageBox>
             ) : (
+              /* If statement filters isFeatured */
               <Row>
-                {products.slice(0, 3).map((product) => {
+                {products.slice(0, 4).map((product) => {
                   if (product.isFeatured)
                     return (
                       <Col
@@ -120,6 +125,7 @@ function HomeScreen() {
             ) : error ? (
               <MessageBox variant="danger">{error}</MessageBox>
             ) : (
+              /* Gets current day, the date of product creation and compares. Filters out anything over 30 days*/
               <Row>
                 {products.slice(0, 3).map((product) => {
                   const str = product.createdAt;

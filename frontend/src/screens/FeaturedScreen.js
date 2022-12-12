@@ -1,3 +1,7 @@
+/**
+ * Screen that contains the products that are considered featured.
+ */
+
 import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import logger from 'use-reducer-logger';
@@ -59,6 +63,7 @@ function FeaturedScreen() {
           ) : error ? (
             <MessageBox variant="danger">{error}</MessageBox>
           ) : (
+            /* If statement filters the featured products */
             <Row className="justify-content-md-center main-content products">
               {products.map((product) => {
                 if (product.isFeatured)

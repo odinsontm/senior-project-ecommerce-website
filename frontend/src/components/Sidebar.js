@@ -1,3 +1,7 @@
+/**
+ * Sidebar component that attaches to navbar.
+ */
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import menulogo from '../pics/menu.svg';

@@ -1,3 +1,7 @@
+/**
+ * Unused Screen for loading orders
+ */
+
 import React, { useReducer } from 'react';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';

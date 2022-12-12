@@ -1,3 +1,7 @@
+/**
+ * Main app file. Sets up the routes/connects the site. Also adds header and footer to every page
+ */
+
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

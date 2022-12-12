@@ -1,3 +1,8 @@
+/**
+ * Sets up backend server that sets up api for users/products/orders
+ * Frontend uses this to display products, users
+ */
+
 import express from 'express';
 import data from './data.js';
 import mongoose from 'mongoose';

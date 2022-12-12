@@ -1,3 +1,7 @@
+/**
+ * Screen that contains the About/Contact information
+ */
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Row from 'react-bootstrap/Row';

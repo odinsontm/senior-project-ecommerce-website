@@ -1,3 +1,7 @@
+/**
+ * Screen that contains all products, is unfiltered.
+ */
+
 import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import logger from 'use-reducer-logger';

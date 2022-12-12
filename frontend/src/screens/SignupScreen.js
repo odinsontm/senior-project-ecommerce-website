@@ -1,3 +1,7 @@
+/**
+ * Signup form
+ */
+
 import Axios from 'axios';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';

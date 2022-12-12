@@ -1,3 +1,7 @@
+/**
+ * Model used to create an order in the database
+ */
+
 import mongoose from 'mongoose';
 
 const orderSchema = new mongoose.Schema(

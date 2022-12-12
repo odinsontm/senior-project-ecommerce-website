@@ -1,3 +1,5 @@
+/* original test data file, no longer used. data is in backend */
+
 const data = {
   products: [
     {

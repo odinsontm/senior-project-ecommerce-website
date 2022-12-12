@@ -1,3 +1,7 @@
+/**
+ * Used for authentication of the user.
+ */
+
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import expressAsyncHandler from 'express-async-handler';

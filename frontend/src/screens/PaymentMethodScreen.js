@@ -1,3 +1,7 @@
+/**
+ * Screen that renders the payment method for paypal checkbox. Sets up for more development
+ */
+
 import React, { useContext, useEffect, useState } from 'react';
 import CheckoutSteps from '../components/CheckoutSteps';
 import Row from 'react-bootstrap/Row';

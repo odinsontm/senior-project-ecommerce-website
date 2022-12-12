@@ -1,3 +1,7 @@
+/**
+ * Component containing the rating star functionality
+ */
+
 function Rating(props) {
   const { rating, numReviews } = props;
   return (

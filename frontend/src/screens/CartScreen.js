@@ -1,3 +1,7 @@
+/**
+ * Screen that contains the Cart Page and all functionality relating to it.
+ */
+
 import { useContext } from 'react';
 import { Store } from '../Store';
 import { Helmet } from 'react-helmet-async';

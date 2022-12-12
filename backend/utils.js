@@ -1,3 +1,7 @@
+/**
+ * creates token for user
+ */
+
 import jwt from 'jsonwebtoken';
 
 export const generateToken = (user) => {

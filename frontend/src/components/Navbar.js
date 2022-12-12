@@ -1,3 +1,8 @@
+/**
+ * Navigation bar component. Used on all pages.
+ * Contains link to sidebar component.
+ */
+
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Store } from '../Store';

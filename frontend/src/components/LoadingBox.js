@@ -1,3 +1,7 @@
+/**
+ * Loading spin component, used for loading products
+ */
+
 import Spinner from 'react-bootstrap/Spinner';
 
 export default function LoadingBox() {

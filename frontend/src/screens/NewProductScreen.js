@@ -1,3 +1,7 @@
+/**
+ * Page only displays products that have been created within 30 days.
+ */
+
 import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import logger from 'use-reducer-logger';
@@ -58,6 +62,7 @@ function NewProductScreen() {
           ) : error ? (
             <MessageBox variant="danger">{error}</MessageBox>
           ) : (
+            /* Gets current date and product creation date and compares. Filters out anything over 30 days. */
             <Row className="justify-content-md-center main-content products">
               {products.map((product) => {
                 const str = product.createdAt;

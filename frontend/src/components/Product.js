@@ -1,3 +1,8 @@
+/**
+ * Product Component, used for every preview/thumbnail product.
+ * Found throughout the site
+ */
+
 import axios from 'axios';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';

@@ -1,3 +1,7 @@
+/**
+ * Button that scrolls to top, appears when user has scrolled down
+ */
+
 import React, { useState } from 'react';
 import { Button } from './Styles';
 

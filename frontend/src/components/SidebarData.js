@@ -1,3 +1,7 @@
+/**
+ * Data used inside the sidebar, can edit easier using a data file.
+ */
+
 export const SidebarData = [
   {
     title: 'HOME',

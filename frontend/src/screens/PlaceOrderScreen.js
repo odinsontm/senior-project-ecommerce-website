@@ -1,3 +1,7 @@
+/**
+ * Review order screen that contains all information before placing order. Then places order
+ */
+
 import React, { useContext, useEffect, useReducer } from 'react';
 import Axios from 'axios';
 import CheckoutSteps from '../components/CheckoutSteps';

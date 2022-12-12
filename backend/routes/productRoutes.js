@@ -1,3 +1,5 @@
+/** used to retrieve product from db */
+
 import express from 'express';
 import Product from '../models/productModel.js';
 

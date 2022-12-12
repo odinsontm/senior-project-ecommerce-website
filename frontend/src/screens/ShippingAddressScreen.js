@@ -1,3 +1,7 @@
+/**
+ * Screen that allows user to save shipping address
+ */
+
 import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';

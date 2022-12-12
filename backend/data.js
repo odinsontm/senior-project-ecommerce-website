@@ -1,3 +1,7 @@
+/**
+ * Data that creates products and test users
+ */
+
 import bcrypt from 'bcryptjs';
 
 const data = {
